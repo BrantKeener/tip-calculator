@@ -6,6 +6,7 @@ const tipObject = {
   tip: 0,
   tipCalc: function() {
     let totalWTip = this.subtotal + (this.subtotal * (this.tip / 100));
+    // console.log(this.subtotal, this.tip)
     return totalWTip.toFixed(2);
   }
 };
@@ -25,14 +26,16 @@ document.addEventListener('click', (event) => {
     };
   };
   if(id === 'calculateTip') {
-    tipObject.subtotal = subtotal;
+    tipObject.subtotal = parseFloat(subtotal);
     if(tipEntry.disabled === true) {
       const genericTip = document.getElementById('tipSelection').value;
-      tipObject.tip = genericTip;
+      tipObject.tip = parseInt(genericTip);
     } else if (tipEntry.disabled === false) {
       const customTip = document.getElementById('customTip').value;
-      tipObject.tip = customTip;
+      tipObject.tip = parseInt(customTip);
     };
+    let totalValue = `Total: ${tipObject.tipCalc()}`;
+    document.getElementById('billTotal').textContent = totalValue
   };
 });
 
