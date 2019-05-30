@@ -9,6 +9,34 @@
   <title>Tip Calculator</title>
 </head>
 <body>
-  
+  <section>
+    <header>The Tip Calculator</header>
+
+    <form>
+      <fieldset>
+        <legend>The Tip Area:</legend>
+        <label for="subtotal">Subtotal</label>
+        <input type="text" name="money" id="subtotal">
+        <label for="genericTip">Generic Tip</label>
+        <select name="generic" id="genericTip">
+          <option value="" selected autocomplete="off">Select Generic Tip</option>
+          <option value="5">5%</option>
+          <option value="10">10%</option>
+          <option value="15">15%</option>
+          <option value="20">20%</option>
+          <option value="25">25%</option>
+        </select>
+        <label for="customTip">Custom Tip</label>
+        <input type="text" name="custom" id="customTip">
+        <button type="submit">Calculate Tip</button>
+      </fieldset>
+    </form>
+
+    <section>
+      <header>Here is Your New Total</header>
+      <p>Total: </p>
+    </section>
+
+  </section>
 </body>
 </html>
