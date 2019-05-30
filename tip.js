@@ -2,10 +2,10 @@
 // Test 0, -2, 2
 
 const tipObject = {
-  total: 10,
-  tip: 10,
+  subtotal: 0,
+  tip: 0,
   tipCalc: function() {
-    let totalWTip = this.total + (this.total * (this.tip / 100));
+    let totalWTip = this.subtotal + (this.subtotal * (this.tip / 100));
     return totalWTip.toFixed(2);
   }
 };
@@ -15,6 +15,7 @@ const tipObject = {
 document.addEventListener('click', (event) => {
   event.preventDefault();
   const { value, id, tagName } = event.target;
+  const subtotal = document.getElementById('subtotal').value;
   let tipEntry = document.getElementById('customTip');
   if(tagName === 'SELECT' || tagName === 'OPTION') {
     if(value === 'customSelected') {
@@ -23,8 +24,15 @@ document.addEventListener('click', (event) => {
       tipEntry.disabled = true;
     };
   };
-  if(id === 'calculateTip' && tipEntry.disabled === true) {
-    console.log(value);
+  if(id === 'calculateTip') {
+    tipObject.subtotal = subtotal;
+    if(tipEntry.disabled === true) {
+      const genericTip = document.getElementById('tipSelection').value;
+      tipObject.tip = genericTip;
+    } else if (tipEntry.disabled === false) {
+      const customTip = document.getElementById('customTip').value;
+      tipObject.tip = customTip;
+    };
   };
 });
 
