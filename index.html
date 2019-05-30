@@ -17,18 +17,19 @@
         <legend>The Tip Area:</legend>
         <label for="subtotal">Subtotal</label>
         <input type="text" name="money" id="subtotal">
-        <label for="genericTip">Generic Tip</label>
-        <select name="generic" id="genericTip">
-          <option value="" selected autocomplete="off">Select Generic Tip</option>
-          <option value="5">5%</option>
-          <option value="10">10%</option>
-          <option value="15">15%</option>
-          <option value="20">20%</option>
-          <option value="25">25%</option>
+        <label for="tipSelection">Tip Amount</label>
+        <select name="generic" id="tipSelection">
+          <option value="noneSelected" selected autocomplete="off">Generic or Custom Tip</option>
+          <option value="customSelected" autocomplete="off">Enter Custom Tip</option>
+          <option autocomplete="off" value="5">5%</option>
+          <option autocomplete="off" value="10">10%</option>
+          <option autocomplete="off" value="15">15%</option>
+          <option autocomplete="off" value="20">20%</option>
+          <option autocomplete="off" value="25">25%</option>
         </select>
         <label for="customTip">Custom Tip</label>
-        <input type="text" name="custom" id="customTip">
-        <button type="submit">Calculate Tip</button>
+        <input type="text" name="custom" id="customTip" disabled>
+        <button type="submit" id="calculateTip">Calculate Tip</button>
       </fieldset>
     </form>
 

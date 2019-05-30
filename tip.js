@@ -1,5 +1,14 @@
 // Event delegator
 
+document.addEventListener('click', (event) => {
+  event.preventDefault();
+  const { id } = event.target;
+  console.log(event)
+  if(id === 'customTip') {
+    
+  };
+});
+
 // Tip-calculator
 // Test 0, -2, 2
 
@@ -12,5 +21,5 @@ const tipObject = {
   }
 };
 
-console.log(tipObject.tipCalc());
+// console.log(tipObject.tipCalc());
 // Display
